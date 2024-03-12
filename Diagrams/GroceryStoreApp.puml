@@ -13,7 +13,7 @@ skinparam rectangle {
     BackgroundColor #f7f4eb
     BorderColor Black
 }
-rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
+rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
     package "Employees Management Subdomain" <<Rectangle>> #3399FF {
 
         package "Entities" {
@@ -72,6 +72,7 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
             class Role << Enumerator >> {
                 + Janitor
                 + Cashier
+                + Manager
             }
             class EmployeeIdentifier{
                 employeeId : UUID
@@ -93,8 +94,6 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 + name: String
                 + contactInfo: Contact
                 + paymentMethod: String
-                + delivery
-                + receiptsNumbers: Set<String>
             }
         }
         package "Value Objects" {
@@ -174,7 +173,7 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 + currency : Currency
             }
             class PurchaseReceiptIdentifier{
-                + paymentInformationID : UUID
+                + purchaseReceiptId : UUID
             }
             enum Currency {
                 USD
