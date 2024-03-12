@@ -50,6 +50,15 @@ dependencies {
 	testImplementation("org.testcontainers:junit-jupiter")
 	testImplementation("org.testcontainers:mysql")
 	testImplementation("org.testcontainers:postgresql")
+	implementation("org.mapstruct:mapstruct:1.5.5.Final")
+
+	implementation("org.mapstruct:mapstruct-processor:1.5.5.Final")
+	compileOnly ("org.mapstruct:mapstruct-processor:1.5.5.Final")
+	annotationProcessor ("org.mapstruct:mapstruct-processor:1.5.5.Final")
+	annotationProcessor ("org.projectlombok:lombok")
+	annotationProcessor ("org.projectlombok:lombok-mapstruct-binding:0.2.0")
+	testAnnotationProcessor ("org.mapstruct:mapstruct-processor:1.5.5.Final")
+	implementation("org.mapstruct:mapstruct:1.4.2.Final")
 }
 
 dependencyManagement {

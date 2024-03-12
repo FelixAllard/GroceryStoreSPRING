@@ -93,7 +93,6 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
             class Client {
                 + name: String
                 + contactInfo: Contact
-                + paymentMethod: String
             }
         }
         package "Value Objects" {

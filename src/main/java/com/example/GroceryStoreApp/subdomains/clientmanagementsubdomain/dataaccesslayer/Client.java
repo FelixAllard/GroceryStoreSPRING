@@ -19,7 +19,6 @@ public class Client {
     private String name;
     @Embedded
     private Contact contact;
-    private String paymentMethod;
 
     @Embedded
     private ClientIdentifier clientIdentifier;

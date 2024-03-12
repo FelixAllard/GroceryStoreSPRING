@@ -1,21 +1,20 @@
 package com.example.GroceryStoreApp.subdomains.clientmanagementsubdomain.presentationlayer;
 
-import com.example.GroceryStoreApp.commons.enums.Currency;
+
 import com.example.GroceryStoreApp.subdomains.clientmanagementsubdomain.dataaccesslayer.Address;
 import com.example.GroceryStoreApp.subdomains.clientmanagementsubdomain.dataaccesslayer.Contact;
 import com.example.GroceryStoreApp.subdomains.clientmanagementsubdomain.dataaccesslayer.Membership;
 import jakarta.persistence.Embedded;
-import lombok.*;
-import org.springframework.hateoas.RepresentationModel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClientResponseModel extends RepresentationModel<ClientResponseModel> {
-    //Client
+public class ClientRequestModel {
     private String name;
     @Embedded
     private Contact contactInfo;
@@ -23,5 +22,4 @@ public class ClientResponseModel extends RepresentationModel<ClientResponseModel
     private Address address;
     @Embedded
     private Membership membership;
-
 }
