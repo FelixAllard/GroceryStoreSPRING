@@ -13,16 +13,7 @@ skinparam rectangle {
     BackgroundColor #f7f4eb
     BorderColor Black
 }
-
-
-
-
-
-
-
 rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
-
-
     package "Employees Management Subdomain" <<Rectangle>> #3399FF {
 
         package "Entities" {
@@ -30,27 +21,15 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 + name: String
                 + age: Integer
             }
-            class Manager {
-                + name: String
-                + age: Integer
-                + department: String
-            }
         }
-
         package "Value Objects" {
-            class Availability {
-                + dayAvailable: DaysOfTheWeek
-                + specialNonAvailability: DayNonAvailable
-            }
-
-            class DayNonAvailable {
+            class DaysNonAvailable {
                 + fullDay: Boolean
                 + startOfNonAvailability: DateTime
                 + endOfNonAvailability: DateTime
                 + reason: String
                 + weekDay: DaysOfTheWeek
             }
-
             enum DaysOfTheWeek {
                 Monday
                 Tuesday
@@ -60,7 +39,6 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 Saturday
                 Sunday
             }
-
             enum CurrentEmploymentStatus {
                 Employed
                 Fired
@@ -71,7 +49,6 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 value : Double
                 currency : Currency
             }
-
             enum Currency {
                 USD
                 EUR
@@ -80,7 +57,6 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 AUD
                 CAD
             }
-
             class Salary {
                 + salaryPrice: Double
                 + hourly: Time
@@ -97,34 +73,19 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 + Janitor
                 + Cashier
             }
-            class ManagerIdentifier{
-                managerID : UUID
-            }
-            Manager o--"1" ManagerIdentifier
             class EmployeeIdentifier{
-                employeeID : UUID
+                employeeId : UUID
             }
             Employee o--"1" EmployeeIdentifier
 
             Price --> Currency
             Salary --> Price
             Salary --> PaymentMethod
-
         }
-
         Employee --> Salary
         Employee --> CurrentEmploymentStatus
-        Employee --> Availability
-
-        Availability o-- "1" DayNonAvailable
-        Availability "1"-->"0..*" DaysOfTheWeek
-        DayNonAvailable --> DaysOfTheWeek
-
-
-        Manager --> Salary
-        Manager --> CurrentEmploymentStatus
-        Manager --> Availability
-
+        DaysNonAvailable --> DaysOfTheWeek
+        Employee o--"0..*" DaysNonAvailable
     }
     package "Clients Subdomain" <<Rectangle>> #66CC66 {
         package "Entities" {
@@ -135,9 +96,7 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 + delivery
                 + receiptsNumbers: Set<String>
             }
-
         }
-
         package "Value Objects" {
             class Address {
                 + street: String
@@ -146,7 +105,6 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 + postalCode: String
                 + country: String
             }
-
             class Contact {
                 + email: String
                 + phone: String
@@ -156,9 +114,8 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 + totalSpent: Double
                 + numberOfPoints: Integer
             }
-
             class ClientIdentifier {
-                + UUID: UUID
+                + clientId: UUID
             }
             class MembershipStatus{
                 + Active
@@ -181,24 +138,20 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
             Membership o--"1" Price
             Membership --> MembershipStatus
             Client --> Membership
-            Client --> ManagerIdentifier
             Client o--"1" Address
-
         }
-
-
         Client --> "1" Contact
         Client --> "1" ClientIdentifier
     }
-
     package "Transaction Management Subsystem" <<Rectangle>> #FF9933 {
+        note "INVARIANT : On every purchase, update client point depending on total of purchases - ADD WHENEVER POST, UPDATE DELETE" as explanation
+
         package "Aggregate" {
             AGGREGATE_ROOT_ENTITY(PurchaseReceipt){
                 + amount: Double
                 + date: Date
             }
         }
-
         package "Value Objects" {
             class Date {
                 + day: Integer
@@ -234,19 +187,13 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
             Price --> Currency
             PurchaseReceipt o--"1" Price
             PurchaseReceipt o--"1" PurchaseReceiptIdentifier
-
-
         }
-
        PurchaseReceipt o--"1" StoreAddress
        CurrentDate --> Date
        PurchaseReceipt o--"1" CurrentDate
        PurchaseReceipt o--"1" ClientIdentifier
        PurchaseReceipt o--"1" EmployeeIdentifier
-       PurchaseReceipt o--"1" ManagerIdentifier
-
-
-
+       Employee o--"1" Role
     }
     package "Product Subdomain" <<Rectangle>> #ffff11 {
 
@@ -257,7 +204,6 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
                 + price: Double
             }
         }
-
         package "Value Objects" {
             class ProductIdentifier {
                 + productID : UUID
@@ -306,14 +252,9 @@ rectangle "Client Management Subdomain" as BoundedContextWedding #line.dashed {
             Product --> ProductAvailability
             PurchaseReceipt o--"1..*" ProductIdentifier
         }
-
         Product --> "0..*" Image
         Product --> "0..*" Category
-
     }
-
-
-
 }
 
 @enduml
