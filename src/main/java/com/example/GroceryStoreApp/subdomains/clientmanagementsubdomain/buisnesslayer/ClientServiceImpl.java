@@ -1,5 +1,6 @@
 package com.example.GroceryStoreApp.subdomains.clientmanagementsubdomain.buisnesslayer;
 
+import com.example.GroceryStoreApp.commons.enums.Currency;
 import com.example.GroceryStoreApp.commons.enums.Price;
 import com.example.GroceryStoreApp.commons.identifiers.ClientIdentifier;
 import com.example.GroceryStoreApp.subdomains.clientmanagementsubdomain.dataaccesslayer.*;
@@ -45,23 +46,23 @@ public class ClientServiceImpl implements ClientService{
     public ClientResponseModel createClient(ClientRequestModel clientRequestModel) {
         //We don't depend on other stuff
         Price price = new Price(
-                clientRequestModel.getMembership().getPrice().getValue(),
-                clientRequestModel.getMembership().getPrice().getCurrency()
+                clientRequestModel.getValue(),
+                Currency.valueOf(clientRequestModel.getCurrency())
         );
-        Contact contact = new Contact(clientRequestModel.getContactInfo().getEmail(),
-                clientRequestModel.getContactInfo().getPhone()
+        Contact contact = new Contact(clientRequestModel.getEmail(),
+                clientRequestModel.getPhone()
         );
         Address address = new Address(
-                clientRequestModel.getAddress().getStreet(),
-                clientRequestModel.getAddress().getCity(),
-                clientRequestModel.getAddress().getState(),
-                clientRequestModel.getAddress().getPostalCode(),
-                clientRequestModel.getAddress().getCountry()
+                clientRequestModel.getStreet(),
+                clientRequestModel.getCity(),
+                clientRequestModel.getState(),
+                clientRequestModel.getPostalCode(),
+                clientRequestModel.getCountry()
                 );
         Membership membership = new Membership(
-                clientRequestModel.getMembership().getTotalSpent(),
-                clientRequestModel.getMembership().getNumberOfPoints(),
-                clientRequestModel.getMembership().getMembershipStatus(),
+                clientRequestModel.getTotalSpent(),
+                clientRequestModel.getNumberOfPoints(),
+                MembershipStatus.valueOf(clientRequestModel.getMembershipStatus()),
                 price
         );
         Client client = clientRequestMapper.requestModelToEntity(
@@ -82,23 +83,23 @@ public class ClientServiceImpl implements ClientService{
 
         Client client = clientRepository.findClientByClientIdentifier_ClientId(clientId);
         Price price = new Price(
-                clientRequestModel.getMembership().getPrice().getValue(),
-                clientRequestModel.getMembership().getPrice().getCurrency()
+                clientRequestModel.getValue(),
+                Currency.valueOf(clientRequestModel.getCurrency())
         );
-        Contact contact = new Contact(clientRequestModel.getContactInfo().getEmail(),
-                clientRequestModel.getContactInfo().getPhone()
+        Contact contact = new Contact(clientRequestModel.getEmail(),
+                clientRequestModel.getPhone()
         );
         Address address = new Address(
-                clientRequestModel.getAddress().getStreet(),
-                clientRequestModel.getAddress().getCity(),
-                clientRequestModel.getAddress().getState(),
-                clientRequestModel.getAddress().getPostalCode(),
-                clientRequestModel.getAddress().getCountry()
+                clientRequestModel.getStreet(),
+                clientRequestModel.getCity(),
+                clientRequestModel.getState(),
+                clientRequestModel.getPostalCode(),
+                clientRequestModel.getCountry()
         );
         Membership membership = new Membership(
-                clientRequestModel.getMembership().getTotalSpent(),
-                clientRequestModel.getMembership().getNumberOfPoints(),
-                clientRequestModel.getMembership().getMembershipStatus(),
+                clientRequestModel.getTotalSpent(),
+                clientRequestModel.getNumberOfPoints(),
+                MembershipStatus.valueOf(clientRequestModel.getMembershipStatus()),
                 price
         );
         Client updatedClient = clientRequestMapper.requestModelToEntity(

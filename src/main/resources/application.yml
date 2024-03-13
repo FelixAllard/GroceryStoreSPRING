@@ -21,16 +21,16 @@ spring:
 
   jpa:
     hibernate:
-    ddl-auto: none
+      ddl-auto: none
 
   config:
     activate:
-    on-profile: docker
+      on-profile: docker
 
   sql:
     init:
-    platform: mysql
-    mode: always
+      platform: mysql
+      mode: always
 
 server.port: 8080
 
