@@ -199,7 +199,6 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
             class Product {
                 + name: String
                 + description: String
-                + price: Double
             }
         }
         package "Value Objects" {
@@ -210,10 +209,9 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
                 + url: String
                 + altText: String
             }
-            class Category {
+            class CategoryArticle {
                 + name: String
                 + description: String
-                + categoryID: UUID
             }
             class Price{
                 + value : Double
@@ -230,8 +228,8 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
                 + year: Integer
             }
             class PalletImportedFrom{
-                + PalletID : UUID
-                + Manufacturer
+                + palletID : int
+                + manufacturer : String
                 + arrivalDate : Date
             }
             enum Currency {
@@ -251,7 +249,7 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
             PurchaseReceipt o--"1..*" ProductIdentifier
         }
         Product --> "0..*" Image
-        Product --> "0..*" Category
+        Product --> "0..*" CategoryArticle
     }
 }
 
