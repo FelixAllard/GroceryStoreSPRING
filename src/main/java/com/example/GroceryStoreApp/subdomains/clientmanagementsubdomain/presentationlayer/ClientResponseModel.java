@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClientResponseModel extends RepresentationModel<ClientResponseModel> {
+    private String clientId;
     //Client
     private String name;
     @Embedded

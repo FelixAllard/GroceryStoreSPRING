@@ -19,7 +19,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public interface ClientRequestMapper {
     @Mapping(target = "id", ignore = true)
     Client requestModelToEntity(ClientRequestModel clientRequestModel,
-                                ClientIdentifier decorationIdentifier,
+                                ClientIdentifier clientIdentifier,
                                 Contact contact,
                                 Address address,
                                 Membership membership

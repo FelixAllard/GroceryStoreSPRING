@@ -15,6 +15,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClientRequestModel {
+    private String clientId;
+
     private String name;
     @Embedded
     private Contact contactInfo;

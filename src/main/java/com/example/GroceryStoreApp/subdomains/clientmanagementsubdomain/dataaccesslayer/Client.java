@@ -28,4 +28,14 @@ public class Client {
 
     @Embedded
     private Membership membership;
+    public Client(@NotNull Contact contact,
+                  @NotNull ClientIdentifier clientIdentifier,
+                  @NotNull Address address,
+                  @NotNull Membership membership
+    ){
+        this.contact = contact;
+        this.clientIdentifier = clientIdentifier;
+        this.address = address;
+        this.membership = membership;
+    }
 }

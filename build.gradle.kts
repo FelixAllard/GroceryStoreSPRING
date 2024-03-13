@@ -59,6 +59,8 @@ dependencies {
 	annotationProcessor ("org.projectlombok:lombok-mapstruct-binding:0.2.0")
 	testAnnotationProcessor ("org.mapstruct:mapstruct-processor:1.5.5.Final")
 	implementation("org.mapstruct:mapstruct:1.4.2.Final")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	annotationProcessor("org.mapstruct:mapstruct-processor:1.4.2.Final")
 }
 
 dependencyManagement {
