@@ -22,15 +22,16 @@ public interface ClientResponseMapper {
     @Mapping(expression = "java(client.getName())", target = "name")
     @Mapping(expression = "java(client.getContact().getEmail())", target = "email")
     @Mapping(expression = "java(client.getContact().getPhone())", target = "phone")
-    @Mapping(expression = "java(client.getAddress().getStreet()", target = "street")
+    @Mapping(expression = "java(client.getAddress().getStreet())", target = "street")
     @Mapping(expression = "java(client.getAddress().getCity())", target = "city")
     @Mapping(expression = "java(client.getAddress().getState())", target = "state")
     @Mapping(expression = "java(client.getAddress().getPostalCode())", target = "postalCode")
     @Mapping(expression = "java(client.getAddress().getCountry())", target = "country")
     @Mapping(expression = "java(client.getMemberShip().getTotalSpent())", target = "totalSpent")
-    @Mapping(expression = "java(client.getMemberShip().getNumberOfPoints)", target = "numberOfPoints")
-    @Mapping(expression = "java(client.getMemberShip().getTotalSpent())", target = "totalSpent")
+    @Mapping(expression = "java(client.getMemberShip().getNumberOfPoints())", target = "numberOfPoints")
     @Mapping(expression = "java(client.getMemberShip().getMembershipStatus())", target = "membershipStatus")
+    @Mapping(expression = "java(client.getMembership().getPrice().getValue())", target = "value")
+    @Mapping(expression = "java(client.getMembership().getPrice().getCurrency())", target = "currency")
     ClientResponseModel entityToResponseModel(Client client);
 
     List<ClientResponseModel> entityListToResponseModelList(List<Client> clients);

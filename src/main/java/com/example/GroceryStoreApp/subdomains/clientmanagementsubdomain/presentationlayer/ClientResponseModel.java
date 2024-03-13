@@ -16,13 +16,19 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class ClientResponseModel extends RepresentationModel<ClientResponseModel> {
     private String clientId;
-    //Client
+
     private String name;
-    @Embedded
-    private Contact contactInfo;
-    @Embedded
-    private Address address;
-    @Embedded
-    private Membership membership;
+    private String email;
+    private String phone;
+    private String street;
+    private String city;
+    private String state;
+    private String postalCode;
+    private String country;
+    private double totalSpent;
+    private int numberOfPoints;
+    private String membershipStatus;
+    private double value;
+    private String currency;
 
 }
