@@ -15,7 +15,7 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:mysql://mysql1/grocery_store-db
+    url: jdbc:mysql://mysql1/grocerystore-db
     username: user
     password: pwd
 

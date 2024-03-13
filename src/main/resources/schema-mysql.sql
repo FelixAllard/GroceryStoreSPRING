@@ -1,6 +1,6 @@
-USE `grocery_store-db`;
+USE `grocerystore-db`;
 
-DROP TABLE IF EXISTS clients
+DROP TABLE IF EXISTS clients;
 
 CREATE TABLE IF NOT EXISTS clients (
     id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
