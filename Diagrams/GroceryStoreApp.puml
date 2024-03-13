@@ -210,8 +210,8 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
                 + altText: String
             }
             class CategoryArticle {
-                + name: String
-                + description: String
+                + categoryName: String
+                + categoryDescription: String
             }
             class Price{
                 + value : Double

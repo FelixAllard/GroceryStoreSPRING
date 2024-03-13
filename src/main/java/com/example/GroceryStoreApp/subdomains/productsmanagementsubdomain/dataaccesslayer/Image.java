@@ -1,5 +1,4 @@
-package com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.dataaccesslayer;
-
+package com.example.GroceryStoreApp.subdomains.productsmanagementsubdomain.dataaccesslayer;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
@@ -10,9 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Date {
-    private int day;
-    private int month;
-    private int year;
-
+public class Image {
+    private String url;
+    private String altText;
 }

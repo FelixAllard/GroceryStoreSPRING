@@ -1,4 +1,4 @@
-package com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.dataaccesslayer;
+package com.example.GroceryStoreApp.subdomains.productsmanagementsubdomain.dataaccesslayer;
 
 //TODO  We have to do the stuff here
 public interface ProductRepository {

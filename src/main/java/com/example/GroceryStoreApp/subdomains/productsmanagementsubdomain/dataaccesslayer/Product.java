@@ -1,12 +1,10 @@
-package com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.dataaccesslayer;
+package com.example.GroceryStoreApp.subdomains.productsmanagementsubdomain.dataaccesslayer;
 
 import com.example.GroceryStoreApp.commons.enums.Price;
 import com.example.GroceryStoreApp.commons.enums.ProductAvailability;
-import com.example.GroceryStoreApp.commons.identifiers.ClientIdentifier;
 import com.example.GroceryStoreApp.commons.identifiers.ProductIdentifier;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import jdk.jfr.Category;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

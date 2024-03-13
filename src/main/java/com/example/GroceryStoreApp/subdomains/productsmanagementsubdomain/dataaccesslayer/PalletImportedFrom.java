@@ -1,4 +1,4 @@
-package com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.dataaccesslayer;
+package com.example.GroceryStoreApp.subdomains.productsmanagementsubdomain.dataaccesslayer;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Embedded;
