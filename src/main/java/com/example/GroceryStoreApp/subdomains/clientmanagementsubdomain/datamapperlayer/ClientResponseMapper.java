@@ -30,7 +30,7 @@ public interface ClientResponseMapper {
     @Mapping(expression = "java(client.getMemberShip().getTotalSpent())", target = "totalSpent")
     @Mapping(expression = "java(client.getMemberShip().getNumberOfPoints)", target = "numberOfPoints")
     @Mapping(expression = "java(client.getMemberShip().getTotalSpent())", target = "totalSpent")
-    @Mapping(expression = "java(client.getMemberShip.getMembershipStatus())", target = "membershipStatus")
+    @Mapping(expression = "java(client.getMemberShip().getMembershipStatus())", target = "membershipStatus")
     ClientResponseModel enitityToResponseModel(Client client);
 
     List<ClientResponseModel> entityListToResponseModelList(List<Client> clients);
