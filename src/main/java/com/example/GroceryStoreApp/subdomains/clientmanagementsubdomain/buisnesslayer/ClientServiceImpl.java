@@ -37,7 +37,7 @@ public class ClientServiceImpl implements ClientService{
         if(!clientRepository.existsClientByClientIdentifier_ClientId(clientId))
             throw new NotFoundException("Unknown clientId " + clientId);
         Client clients = clientRepository.findClientByClientIdentifier_ClientId(clientId);
-        return clientResponseMapper.enitityToResponseModel(clients);
+        return clientResponseMapper.entityToResponseModel(clients);
 
     }
 
@@ -71,7 +71,7 @@ public class ClientServiceImpl implements ClientService{
                 address,
                 membership
         );
-        return clientResponseMapper.enitityToResponseModel(clientRepository.save(client));
+        return clientResponseMapper.entityToResponseModel(clientRepository.save(client));
     }
 
     @Override
@@ -110,7 +110,7 @@ public class ClientServiceImpl implements ClientService{
         );
         updatedClient.setId(client.getId());
 
-        return clientResponseMapper.enitityToResponseModel(clientRepository.save(updatedClient));
+        return clientResponseMapper.entityToResponseModel(clientRepository.save(updatedClient));
     }
 
     @Transactional

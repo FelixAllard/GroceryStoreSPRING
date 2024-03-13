@@ -9,7 +9,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.springframework.hateoas.Link;
-import org.mapstruct.Mapper;
 
 import java.util.List;
 
@@ -18,6 +17,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Mapper(componentModel = "spring")
 public interface ClientResponseMapper {
+
     @Mapping(expression = "java(client.getClientIdentifier().getClientId())", target = "clientId")
     @Mapping(expression = "java(client.getName())", target = "name")
     @Mapping(expression = "java(client.getContact().getEmail())", target = "email")
@@ -31,7 +31,7 @@ public interface ClientResponseMapper {
     @Mapping(expression = "java(client.getMemberShip().getNumberOfPoints)", target = "numberOfPoints")
     @Mapping(expression = "java(client.getMemberShip().getTotalSpent())", target = "totalSpent")
     @Mapping(expression = "java(client.getMemberShip().getMembershipStatus())", target = "membershipStatus")
-    ClientResponseModel enitityToResponseModel(Client client);
+    ClientResponseModel entityToResponseModel(Client client);
 
     List<ClientResponseModel> entityListToResponseModelList(List<Client> clients);
 
