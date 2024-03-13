@@ -26,6 +26,6 @@ public class ProductResponseModel extends RepresentationModel<ProductResponseMod
     private String currency;
     private String categoryName;
     private String categoryDescription;
-    private String ult;
+    private String url;
     private String altText;
 }

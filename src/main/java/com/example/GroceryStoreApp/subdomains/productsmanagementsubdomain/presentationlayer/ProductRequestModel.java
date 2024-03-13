@@ -22,6 +22,6 @@ public class ProductRequestModel {
     private String currency;
     private String categoryName;
     private String categoryDescription;
-    private String ult;
+    private String url;
     private String altText;
 }

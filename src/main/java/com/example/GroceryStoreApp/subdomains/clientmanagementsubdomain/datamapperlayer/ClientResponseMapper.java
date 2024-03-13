@@ -48,8 +48,5 @@ public interface ClientResponseMapper {
                         .getClients())
                         .withRel("all clients");
         model.add(clientsLink);
-
     }
-
-
 }
