@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS clients (
     country VARCHAR(13),
     total_spent DECIMAL(10,2),
     number_of_points INTEGER,
-    member_ship_status VARCHAR(20),
+    membership_status VARCHAR(20),
     value DECIMAL(10,2),
     currency VARCHAR(3)
 );

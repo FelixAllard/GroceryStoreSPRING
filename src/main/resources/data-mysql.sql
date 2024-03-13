@@ -1,4 +1,4 @@
-INSERT INTO clients (client_id, name, email, phone, street, city, state, postal_code, country, total_spent, number_of_points, member_ship_status, value, currency)
+INSERT INTO clients (client_id, name, email, phone, street, city, state, postal_code, country, total_spent, number_of_points, membership_status, value, currency)
 VALUES
     ('a5aded7b-71a9-45bc-b218-1b8ef7dd006c', 'Felix', 'xilef992@gmail.com', '(132) 312-1234','Hemon', 'Montreal', 'Quebec', '123asd', 'Canada', 46.42, 80, 'Active', 60.43, 'USD' ),
     ('e5c69b33-45ca-4a14-81a7-39c5f69d4f61', 'Alice', 'alice@example.com', '(555) 555-5555','123 Main St', 'Anytown', 'CA', '12345', 'USA', 100.00, 100, 'Active', 120.00, 'USD'),

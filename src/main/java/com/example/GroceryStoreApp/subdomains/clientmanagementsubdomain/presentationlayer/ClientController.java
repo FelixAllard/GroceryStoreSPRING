@@ -20,8 +20,8 @@ public class ClientController {
         return ResponseEntity.ok().body(clientService.getAllClients());
     }
     @GetMapping("/{clientId}")
-    public ResponseEntity<List<ClientResponseModel>> getClientByClientId(String clientId){
-        return ResponseEntity.ok().body(clientService.getAllClients());
+    public ResponseEntity<ClientResponseModel> getClientByClientId(@PathVariable String clientId){
+        return ResponseEntity.ok().body(clientService.getClientByClientIdentifier_clientId(clientId));
     }
     @PostMapping
     public ResponseEntity<ClientResponseModel> createClient(@RequestBody ClientRequestModel clientRequestModel){
