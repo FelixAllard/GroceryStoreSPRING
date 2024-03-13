@@ -15,7 +15,7 @@ VALUES
 
 INSERT INTO products (product_id, name, description, pallet_id, manufacturer, day, month, year, product_availability, value, currency, category_name, category_description, url, alt_text)
 VALUES
-    ('c7d8c8ac-51fb-464a-9cac-20265a20f247', 'Purel', '', 1, 'PurelCo', 23, 04, 2024, 'Available', 10.54, 'USD', 'Health','All our health products', 'http:imageLink.com','An IMAGE OF PUREL'),
+    ('c7d8c8ac-51fb-464a-9cac-20265a20f247', 'Purel', 'The best product when it comes to washing your hands!', 1, 'PurelCo', 23, 04, 2024, 'Available', 10.54, 'USD', 'Health','All our health products', 'http:imageLink.com','An IMAGE OF PUREL'),
     ('f6e124d7-7688-4f76-bbe6-8f8fc60edf92', 'VitaBoost', 'Boost your vitality with VitaBoost!', 2, 'VitaHealth', 12, 03, 2024, 'Available', 15.99, 'USD', 'Health','All our health products', 'http:imageLink.com','An IMAGE OF VitaBoost'),
     ('9e65d27e-22df-4043-af96-c7e93d1a16fd', 'GlowGarden', 'Illuminate your garden with GlowGarden lights.', 3, 'Lumina', 05, 05, 2024, 'Available', 29.99, 'USD', 'Home & Garden','Gardening and outdoor products', 'http:imageLink.com','An IMAGE OF GlowGarden'),
     ('a8fb2560-768e-476a-ae49-0a799cb097f7', 'TechWiz', 'Stay ahead with the latest TechWiz gadgets.', 4, 'WizCo', 18, 06, 2024, 'Available', 99.99, 'USD', 'Electronics','Cutting-edge electronics', 'http:imageLink.com','An IMAGE OF TechWiz'),
