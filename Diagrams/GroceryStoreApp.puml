@@ -147,7 +147,7 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
         package "Aggregate" {
             AGGREGATE_ROOT_ENTITY(PurchaseReceipt){
                 + amount: Double
-                + date: Date
+                + currentDate: CurrentDate
             }
         }
         package "Value Objects" {
@@ -164,7 +164,7 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
                 + country: String
             }
             class CurrentDate {
-                + transactionTime : Time
+                + transactionHour : Integer
                 + transactionDate : Date
             }
             class Price{

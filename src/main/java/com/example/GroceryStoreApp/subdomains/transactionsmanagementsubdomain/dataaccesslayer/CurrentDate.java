@@ -1,2 +1,18 @@
-package com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.dataaccesslayer;public class CurrentDate {
+package com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.dataaccesslayer;
+
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Embedded;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Embeddable
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public class CurrentDate {
+    private int transactionHour;
+    @Embedded
+    private Date date;
+
 }

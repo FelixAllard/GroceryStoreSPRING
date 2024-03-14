@@ -48,5 +48,6 @@ public interface ProductResponseMapper {
                         .getProducts())
                         .withRel("all products");
         model.add(productsLink);
+
     }
 }

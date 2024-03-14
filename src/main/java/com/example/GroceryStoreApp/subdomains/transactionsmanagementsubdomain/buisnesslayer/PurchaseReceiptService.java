@@ -7,7 +7,7 @@ import com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.pr
 
 import java.util.List;
 
-public interface PurchaseReceipt {
+public interface PurchaseReceiptService {
     List<PurchaseReceiptResponseModel> getAllPurchaseReceipts();
 
     PurchaseReceiptResponseModel getPurchaseReceiptByPurchaseReceiptIdentifier_purchaseReceiptId(String purchaseReceiptId);

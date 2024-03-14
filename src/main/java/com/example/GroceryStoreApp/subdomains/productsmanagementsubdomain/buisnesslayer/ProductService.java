@@ -15,6 +15,6 @@ public interface ProductService {
 
     ProductResponseModel updateProduct(ProductRequestModel productRequestModel, String productId);
 
-    void removeProduct(String clientId);
+    void removeProduct(String productId);
 
 }

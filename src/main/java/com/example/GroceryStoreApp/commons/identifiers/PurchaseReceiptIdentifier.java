@@ -8,7 +8,6 @@ import java.util.UUID;
 @Getter
 public class PurchaseReceiptIdentifier {
     private String purchaseReceiptId;
-    //Set the clientId to a UUID
     public PurchaseReceiptIdentifier() { this.purchaseReceiptId = UUID.randomUUID().toString(); }
     public PurchaseReceiptIdentifier(String purchaseReceiptId) { this.purchaseReceiptId = purchaseReceiptId; }
 }
