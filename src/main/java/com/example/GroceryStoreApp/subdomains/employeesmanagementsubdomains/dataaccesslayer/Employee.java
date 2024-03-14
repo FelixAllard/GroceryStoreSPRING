@@ -20,15 +20,13 @@ public class Employee {
 
     private String name;
     private int age;
-    @Enumerated
-    private EmployeeIdentifier employeeId;
+    @Embedded
+    private EmployeeIdentifier employeeIdentifier;
 
     @Enumerated(EnumType.STRING)
     private CurrentEmploymentStatus currentEmploymentStatus;
     @Embedded
     private DaysNonAvailable daysNonAvailable;
-    @Enumerated(EnumType.STRING)
-    private Role role;
     @Embedded
     private Salary salary;
 

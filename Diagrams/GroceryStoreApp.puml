@@ -72,11 +72,7 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
                 + Credit
                 + Debit
             }
-            class Role << Enumerator >> {
-                + Janitor
-                + Cashier
-                + Manager
-            }
+
             class EmployeeIdentifier{
                 employeeId : UUID
             }
@@ -189,13 +185,14 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
             Price --> Currency
             PurchaseReceipt o--"1" Price
             PurchaseReceipt o--"1" PurchaseReceiptIdentifier
+            CurrentDate --> Date
         }
        PurchaseReceipt o--"1" StoreAddress
-       CurrentDate --> Date
+
        PurchaseReceipt o--"1" CurrentDate
        PurchaseReceipt o--"1" ClientIdentifier
        PurchaseReceipt o--"1" EmployeeIdentifier
-       Employee o--"1" Role
+
     }
     package "Product Subdomain" <<Rectangle>> #ffff11 {
 

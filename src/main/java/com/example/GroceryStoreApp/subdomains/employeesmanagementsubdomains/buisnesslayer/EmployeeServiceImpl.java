@@ -1,10 +1,7 @@
 package com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.buisnesslayer;
 
 
-import com.example.GroceryStoreApp.commons.enums.Currency;
-import com.example.GroceryStoreApp.commons.enums.DaysOfTheWeek;
-import com.example.GroceryStoreApp.commons.enums.PaymentMethod;
-import com.example.GroceryStoreApp.commons.enums.Price;
+import com.example.GroceryStoreApp.commons.enums.*;
 import com.example.GroceryStoreApp.commons.identifiers.EmployeeIdentifier;
 import com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.dataaccesslayer.*;
 import com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.datamapperlayer.EmployeeRequestMapper;
@@ -48,16 +45,15 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     public EmployeeResponseModel createEmployee(EmployeeRequestModel employeeRequestModel) {
         //We don't depend on other stuff
-        Date startDate = new Date(
+        Date date = new Date(
                 employeeRequestModel.getStartDay(),
                 employeeRequestModel.getStartMonth(),
-                employeeRequestModel.getStartYear()
-        );
-        Date endDate = new Date(
+                employeeRequestModel.getStartYear(),
                 employeeRequestModel.getEndDay(),
                 employeeRequestModel.getEndMonth(),
                 employeeRequestModel.getEndYear()
         );
+
         Price price = new Price(
                 employeeRequestModel.getValue(),
                 Currency.valueOf(employeeRequestModel.getCurrency())
@@ -68,8 +64,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         );
         DaysNonAvailable daysNonAvailable = new DaysNonAvailable(
                 employeeRequestModel.getFullDay(),
-                startDate,
-                endDate,
+                date,
                 employeeRequestModel.getReason(),
                 DaysOfTheWeek.valueOf(employeeRequestModel.getDaysOfTheWeek())
         );
@@ -90,16 +85,15 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 
         Employee employee = employeeRepository.findEmployeeByEmployeeIdentifier_EmployeeId(employeeId);
-        Date startDate = new Date(
+        Date date = new Date(
                 employeeRequestModel.getStartDay(),
                 employeeRequestModel.getStartMonth(),
-                employeeRequestModel.getStartYear()
-        );
-        Date endDate = new Date(
+                employeeRequestModel.getStartYear(),
                 employeeRequestModel.getEndDay(),
                 employeeRequestModel.getEndMonth(),
                 employeeRequestModel.getEndYear()
         );
+
         Price price = new Price(
                 employeeRequestModel.getValue(),
                 Currency.valueOf(employeeRequestModel.getCurrency())
@@ -110,14 +104,13 @@ public class EmployeeServiceImpl implements EmployeeService{
         );
         DaysNonAvailable daysNonAvailable = new DaysNonAvailable(
                 employeeRequestModel.getFullDay(),
-                startDate,
-                endDate,
+                date,
                 employeeRequestModel.getReason(),
                 DaysOfTheWeek.valueOf(employeeRequestModel.getDaysOfTheWeek())
         );
         Employee updatedEmployee = employeeRequestMapper.requestModelToEntity(
                 employeeRequestModel,
-                employee.getEmployeeId(),
+                employee.getEmployeeIdentifier(),
                 daysNonAvailable,
                 salary
         );

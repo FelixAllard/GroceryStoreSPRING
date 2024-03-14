@@ -24,20 +24,21 @@ import java.util.List;
 public interface EmployeeResponseMapper {
 
     @Mapping(expression = "java(employee.getEmployeeIdentifier().getEmployeeId())", target = "employeeId")
-    @Mapping(expression = "java(employee.getName())", target = "age")
+    @Mapping(expression = "java(employee.getName())", target = "name")
+    @Mapping(expression = "java(employee.getAge())", target = "age")
     @Mapping(expression = "java(employee.getCurrentEmploymentStatus().name())", target = "currentEmploymentStatus")
     @Mapping(expression = "java(employee.getDaysNonAvailable().getFullDay())", target = "fullDay")
-    @Mapping(expression = "java(employee.getDaysNonAvailable().getDate().getDay())", target = "startDay")
-    @Mapping(expression = "java(employee.getDaysNonAvailable().getDate().getMonth())", target = "startMonth")
-    @Mapping(expression = "java(employee.getDaysNonAvailable().getDate().getYear())", target = "startYear")
-    @Mapping(expression = "java(employee.getDaysNonAvailable().getDate().getDay())", target = "endDay")
-    @Mapping(expression = "java(employee.getDaysNonAvailable().getDate().getMonth())", target = "endMonth")
-    @Mapping(expression = "java(employee.getDaysNonAvailable().getDate().getYear())", target = "endYear")
+    @Mapping(expression = "java(employee.getDaysNonAvailable().getNonAvailability().getStartDay())", target = "startDay")
+    @Mapping(expression = "java(employee.getDaysNonAvailable().getNonAvailability().getStartMonth())", target = "startMonth")
+    @Mapping(expression = "java(employee.getDaysNonAvailable().getNonAvailability().getStartYear())", target = "startYear")
+    @Mapping(expression = "java(employee.getDaysNonAvailable().getNonAvailability().getEndDay())", target = "endDay")
+    @Mapping(expression = "java(employee.getDaysNonAvailable().getNonAvailability().getEndMonth())", target = "endMonth")
+    @Mapping(expression = "java(employee.getDaysNonAvailable().getNonAvailability().getEndYear())", target = "endYear")
     @Mapping(expression = "java(employee.getDaysNonAvailable().getReason())", target = "reason")
     @Mapping(expression = "java(employee.getDaysNonAvailable().getDaysOfTheWeek().name())", target = "daysOfTheWeek")
-    @Mapping(expression = "java(employee.getSalary().getValue())", target = "value")
-    @Mapping(expression = "java(employee.getSalary().getCurrency())", target = "currency")
-    @Mapping(expression = "java(employee.getSalary().getPaymentMethod())", target = "paymentMethod")
+    @Mapping(expression = "java(employee.getSalary().getSalaryPrice().getValue())", target = "value")
+    @Mapping(expression = "java(employee.getSalary().getSalaryPrice().getCurrency().name())", target = "currency")
+    @Mapping(expression = "java(employee.getSalary().getPaymentMethod().name())", target = "paymentMethod")
     EmployeeResponseModel entityToResponseModel(Employee employee);
 
     List<EmployeeResponseModel> entityListToResponseModelList(List<Employee> employees);

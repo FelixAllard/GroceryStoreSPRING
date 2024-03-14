@@ -1,6 +1,7 @@
 package com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.datamapperlayer;
 
 
+import com.example.GroceryStoreApp.commons.enums.Role;
 import com.example.GroceryStoreApp.commons.identifiers.EmployeeIdentifier;
 import com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.dataaccesslayer.DaysNonAvailable;
 import com.example.GroceryStoreApp.subdomains.employeesmanagementsubdomains.dataaccesslayer.Employee;

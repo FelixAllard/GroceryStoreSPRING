@@ -15,13 +15,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class DaysNonAvailable {
-    private boolean fullDay;
+
+    private Boolean fullDay;
     @Embedded
-    private Date startOfNonAvailability;
-    @Embedded
-    private Date endOfNonAvailability;
+    private Date NonAvailability;
     private String reason;
     @Enumerated(EnumType.STRING)
-    private DaysOfTheWeek weekDay;
+    private DaysOfTheWeek daysOfTheWeek;
 
 }
