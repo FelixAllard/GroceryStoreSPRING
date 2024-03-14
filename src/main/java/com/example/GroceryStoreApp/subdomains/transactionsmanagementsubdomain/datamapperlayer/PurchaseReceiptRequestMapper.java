@@ -1,0 +1,2 @@
+package com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.datamapperlayer;public interface PurchaseReceiptRequestMapper {
+}

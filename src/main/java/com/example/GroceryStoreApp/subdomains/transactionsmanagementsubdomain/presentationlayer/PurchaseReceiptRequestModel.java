@@ -1,0 +1,2 @@
+package com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.presentationlayer;public class PurchaseReceiptRequestModel {
+}
