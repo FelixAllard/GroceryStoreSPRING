@@ -25,10 +25,15 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
         package "Value Objects" {
             class DaysNonAvailable {
                 + fullDay: Boolean
-                + startOfNonAvailability: DateTime
-                + endOfNonAvailability: DateTime
+                + startOfNonAvailability: Date
+                + endOfNonAvailability: Date
                 + reason: String
                 + weekDay: DaysOfTheWeek
+            }
+            class Date {
+                + day: Integer
+                + month: Integer
+                + year: Integer
             }
             enum DaysOfTheWeek {
                 Monday
@@ -58,11 +63,9 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
                 CAD
             }
             class Salary {
-                + salaryPrice: Double
-                + hourly: Time
+                + salaryPrice: Price
                 + paymentMethod : PaymentMethod
-                + PaymentInterval: String
-                + Currency: Currency
+
             }
             class PaymentMethod << Enumerator >>{
                 + Cash
@@ -82,6 +85,7 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
             Price --> Currency
             Salary --> Price
             Salary --> PaymentMethod
+            DaysNonAvailable --> Date
         }
         Employee --> Salary
         Employee --> CurrentEmploymentStatus
