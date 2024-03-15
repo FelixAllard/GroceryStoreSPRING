@@ -1,15 +1,17 @@
 package com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.presentationlayer;
 
+import com.example.GroceryStoreApp.subdomains.productsmanagementsubdomain.presentationlayer.ProductResponseModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.hateoas.RepresentationModel;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PurchaseReceiptResponseModel {
+public class PurchaseReceiptResponseModel extends RepresentationModel<PurchaseReceiptResponseModel> {
     private String purchaseReceiptId;
 
     private double amount;

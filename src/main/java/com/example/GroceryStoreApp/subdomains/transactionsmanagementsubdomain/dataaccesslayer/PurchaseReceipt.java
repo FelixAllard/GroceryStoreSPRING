@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "purchase_receipt")
+@Table(name = "purchase_receipts")
 @Data
 @NoArgsConstructor
 public class PurchaseReceipt {

@@ -1,6 +1,5 @@
 package com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.datamapperlayer;
 
-import com.example.GroceryStoreApp.subdomains.productsmanagementsubdomain.dataaccesslayer.Product;
 import com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.dataaccesslayer.PurchaseReceipt;
 import com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.presentationlayer.PurchaseReceiptController;
 import com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.presentationlayer.PurchaseReceiptResponseModel;
@@ -33,7 +32,7 @@ public interface PurchaseReceiptResponseMapper {
 
     PurchaseReceiptResponseModel entityToResponseModel(PurchaseReceipt purchaseReceipt);
 
-    List<PurchaseReceiptResponseModel> entityListToResponseModelList(List<Product> products);
+    List<PurchaseReceiptResponseModel> entityListToResponseModelList(List<PurchaseReceipt> purchaseReceipts);
 
     @AfterMapping
     default void addLinks(@MappingTarget PurchaseReceiptResponseModel model){

@@ -41,4 +41,16 @@ VALUES
     ('7b85a1ed-8339-47ac-b5df-dae04b4c22c2', 'Isabella', 27, 'Employed', false, 30, 09, 2022, 30, 09, 2022, 'Moving to another country', 'Wednesday_Friday', 10.75, 'USD', 'Credit'),
     ('0f181c41-648e-4d1a-8c4d-272c354eb0b4', 'Noah', 24, 'Employed', true, 18, 08, 2023, 18, 08, 2023, 'Family emergency', 'Monday_Tuesday_Thursday', 12.50, 'USD', 'Debit');
 
-
+INSERT INTO purchase_receipts (purchase_receipt_id, amount, transaction_hour, day, month, year, value, currency, street, city, state, postal_code,country)
+VALUES
+    ('105bee72-ab1d-4f76-8bc1-43a399179aa9', 46.80, 13,23,04,2024,24.43, 'USD', 'Boulevard masson', 'montreal', 'New York','h2g23','United State of america'),
+    ('105bee72-ab1d-4f76-8bc1-43a399179aa9', 46.80, 13, 23, 4, 2024, 24.43, 'USD', 'Boulevard Masson', 'Montreal', 'New York', 'h2g23', 'United States of America'),
+    ('2c31d3bd-eb9a-4e1b-bb73-254fdac671fa', 30.25, 10, 15, 3, 2024, 15.50, 'EUR', 'Sunset Boulevard', 'Los Angeles', 'California', '90001', 'United States of America'),
+    ('f82ad55b-c61b-4e1a-9d58-176fb94f3a52', 75.60, 18, 9, 5, 2024, 50.00, 'GBP', 'Oxford Street', 'London', NULL, 'W1D 1BS', 'United Kingdom'),
+    ('7a92c87f-51e0-4335-839a-99b2d0d2b152', 100.00, 12, 30, 6, 2024, 80.00, 'CAD', 'Yonge Street', 'Toronto', 'Ontario', 'M5B 2H1', 'Canada'),
+    ('5c6c6fd2-f1ad-4741-8f24-1aa4d3ebc63c', 55.75, 15, 18, 7, 2024, 40.20, 'AUD', 'George Street', 'Sydney', 'New South Wales', '2000', 'Australia'),
+    ('9a5301cb-5e15-4e0e-b8cb-2850a5119e55', 20.50, 11, 10, 8, 2024, 18.25, 'JPY', 'Shibuya Crossing', 'Tokyo', NULL, '150-0043', 'Japan'),
+    ('f9e4d63d-5b84-46ef-9ff3-d2a7fd89c517', 90.35, 14, 25, 9, 2024, 75.80, 'CHF', 'Bahnhofstrasse', 'Zurich', NULL, '8001', 'Switzerland'),
+    ('2e37c2a3-2c1b-487b-a619-0324a0140cf6', 35.20, 17, 5, 10, 2024, 25.00, 'CNY', 'Nanjing Road', 'Shanghai', NULL, '200000', 'China'),
+    ('cda30f2e-2f67-4f62-86e0-21c1a0b81f9c', 60.75, 16, 20, 11, 2024, 45.90, 'INR', 'MG Road', 'Mumbai', 'Maharashtra', '400001', 'India'),
+    ('3a4d94a5-8b64-4c09-8204-63a9b2b982b5', 25.90, 19, 15, 12, 2024, 20.00, 'BRL', 'Avenida Paulista', 'São Paulo', 'São Paulo', '01310-100', 'Brazil');

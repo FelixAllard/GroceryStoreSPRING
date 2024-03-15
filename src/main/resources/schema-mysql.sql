@@ -58,4 +58,20 @@ CREATE TABLE IF NOT EXISTS employees (
     currency VARCHAR(3),
     payment_method VARCHAR(50)
     );
+CREATE TABLE IF NOT EXISTS purchase_receipts{
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    purchaseReceiptId VARCHAR(50),
+    amount DECIMAL(10, 2),
+    transactionHour INT,
+    day INT,
+    month INT,
+    year INT,
+    value DECIMAL(10, 2),
+    currency VARCHAR(10),
+    street VARCHAR(100),
+    city VARCHAR(50),
+    state VARCHAR(50),
+    postalCode VARCHAR(20),
+    country VARCHAR(50)
+    };
 
