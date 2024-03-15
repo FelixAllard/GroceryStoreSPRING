@@ -3,6 +3,7 @@ USE `grocerystore-db`;
 DROP TABLE IF EXISTS clients;
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS purchase_receipts;
 
 CREATE TABLE IF NOT EXISTS clients (
     id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -58,20 +59,20 @@ CREATE TABLE IF NOT EXISTS employees (
     currency VARCHAR(3),
     payment_method VARCHAR(50)
     );
-CREATE TABLE IF NOT EXISTS purchase_receipts{
+CREATE TABLE IF NOT EXISTS purchase_receipts (
     id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    purchaseReceiptId VARCHAR(50),
+    purchase_receipt_id VARCHAR(50),
     amount DECIMAL(10, 2),
-    transactionHour INT,
-    day INT,
-    month INT,
-    year INT,
+    transaction_hour INTEGER(10),
+    day INTEGER(10),
+    month INTEGER(10),
+    year INTEGER(10),
     value DECIMAL(10, 2),
     currency VARCHAR(10),
     street VARCHAR(100),
     city VARCHAR(50),
     state VARCHAR(50),
-    postalCode VARCHAR(20),
+    postal_code VARCHAR(20),
     country VARCHAR(50)
-    };
+    );
 

@@ -2,6 +2,9 @@ package com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.d
 
 
 import com.example.GroceryStoreApp.commons.enums.Price;
+import com.example.GroceryStoreApp.commons.identifiers.ClientIdentifier;
+import com.example.GroceryStoreApp.commons.identifiers.EmployeeIdentifier;
+import com.example.GroceryStoreApp.commons.identifiers.ProductIdentifier;
 import com.example.GroceryStoreApp.commons.identifiers.PurchaseReceiptIdentifier;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -15,6 +18,14 @@ public class PurchaseReceipt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    //Aggregate
+    @Embedded
+    private ClientIdentifier clientIdentifier;
+    @Embedded
+    private ProductIdentifier productIdentifier;
+    @Embedded
+    private EmployeeIdentifier employeeIdentifier;
+
 
     @Embedded
     private PurchaseReceiptIdentifier purchaseReceiptIdentifier;
@@ -28,10 +39,12 @@ public class PurchaseReceipt {
     private StoreAddress storeAddress;
 
     public PurchaseReceipt(
+            PurchaseReceiptIdentifier purchaseReceiptIdentifier,
             CurrentDate currentDate,
             Price price,
             StoreAddress storeAddress
     ){
+        this.purchaseReceiptIdentifier = purchaseReceiptIdentifier;
         this.currentDate = currentDate;
         this.price = price;
         this.storeAddress=storeAddress;

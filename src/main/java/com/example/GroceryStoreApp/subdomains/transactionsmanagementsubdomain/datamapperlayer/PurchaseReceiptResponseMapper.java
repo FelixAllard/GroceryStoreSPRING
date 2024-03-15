@@ -16,7 +16,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Mapper(componentModel = "spring")
 public interface PurchaseReceiptResponseMapper {
-    @Mapping(expression = "java(purchaseReceipt.getPurchaseReceiptIdentifier().getPurchaseReceiptId())", target = "purchaseReceiptId()")
+    @Mapping(expression = "java(purchaseReceipt.getPurchaseReceiptIdentifier().getPurchaseReceiptId())", target = "purchaseReceiptId")
     @Mapping(expression = "java(purchaseReceipt.getAmount())", target = "amount")
     @Mapping(expression = "java(purchaseReceipt.getCurrentDate().getTransactionHour())", target = "transactionHour")
     @Mapping(expression = "java(purchaseReceipt.getCurrentDate().getDate().getDay())", target = "day")
