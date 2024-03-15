@@ -142,7 +142,7 @@ rectangle "Grocery Store Application" as BoundedContextWedding #line.dashed {
         Client --> "1" ClientIdentifier
     }
     package "Transaction Management Subsystem" <<Rectangle>> #FF9933 {
-        note "INVARIANT : On every purchase, update client point depending on total of purchases - ADD WHENEVER POST, UPDATE DELETE" as explanation
+        note "INVARIANT : On every purchase, update client point depending on total of purchases - ADD WHENEVER POST" as explanation
 
         package "Aggregate" {
             AGGREGATE_ROOT_ENTITY(PurchaseReceipt){

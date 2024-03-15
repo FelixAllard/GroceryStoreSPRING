@@ -14,6 +14,14 @@ import org.springframework.hateoas.RepresentationModel;
 public class PurchaseReceiptResponseModel extends RepresentationModel<PurchaseReceiptResponseModel> {
     private String purchaseReceiptId;
 
+
+    private String clientId;
+    private String clientName;
+    private String productId;
+    private String productName;
+    private String employeeId;
+    private String employeeName;
+
     private double amount;
     private int transactionHour;
     private int day;

@@ -1,6 +1,9 @@
 package com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.datamapperlayer;
 
 import com.example.GroceryStoreApp.commons.enums.Price;
+import com.example.GroceryStoreApp.commons.identifiers.ClientIdentifier;
+import com.example.GroceryStoreApp.commons.identifiers.EmployeeIdentifier;
+import com.example.GroceryStoreApp.commons.identifiers.ProductIdentifier;
 import com.example.GroceryStoreApp.commons.identifiers.PurchaseReceiptIdentifier;
 import com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.dataaccesslayer.CurrentDate;
 import com.example.GroceryStoreApp.subdomains.transactionsmanagementsubdomain.dataaccesslayer.PurchaseReceipt;
@@ -18,6 +21,9 @@ public interface PurchaseReceiptRequestMapper {
             PurchaseReceiptIdentifier purchaseReceiptIdentifier,
             CurrentDate currentDate,
             Price price,
-            StoreAddress storeAddress
+            StoreAddress storeAddress,
+            ClientIdentifier clientIdentifier,
+            ProductIdentifier productIdentifier,
+            EmployeeIdentifier employeeIdentifier
     );
 }

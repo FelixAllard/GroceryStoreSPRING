@@ -8,7 +8,7 @@ import java.util.UUID;
 @Getter
 public class ProductIdentifier {
     private String productId;
-    //Set the clientId to a UUID
+    //Set the productId to a UUID
     public ProductIdentifier() { this.productId = UUID.randomUUID().toString(); }
     public ProductIdentifier(String productId) { this.productId = productId; }
 }

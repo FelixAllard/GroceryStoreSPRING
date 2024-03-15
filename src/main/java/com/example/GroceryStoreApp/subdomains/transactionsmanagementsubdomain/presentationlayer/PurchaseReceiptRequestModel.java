@@ -10,6 +10,10 @@ import lombok.NoArgsConstructor;
 public class PurchaseReceiptRequestModel {
     private String purchaseReceiptId;
 
+    private String clientId;
+    private String productId;
+    private String employeeId;
+
     private double amount;
     private int transactionHour;
     private int day;
